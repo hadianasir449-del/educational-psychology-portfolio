@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Learning Support Assistant</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
+            margin: auto;
+            padding: 30px 20px;
             line-height: 1.6;
         }
 
@@ -26,16 +27,23 @@
         button {
             display: block;
             width: 100%;
+            padding: 15px;
             margin: 12px 0;
-            padding: 14px;
             font-size: 16px;
             cursor: pointer;
+            border: 1px solid #999;
+            border-radius: 8px;
+            background: white;
+        }
+
+        button:hover {
+            background: #f0f0f0;
         }
 
         #support {
-            margin-top: 25px;
+            margin-top: 30px;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #999;
             border-radius: 10px;
         }
     </style>
@@ -52,69 +60,90 @@
 
     <h2>How are you feeling about your studies?</h2>
 
-    <button onclick="showSupport('time')">
+    <button onclick="showTimeManagement()">
         I'm struggling with time management
     </button>
 
-    <button onclick="showSupport('motivation')">
+    <button onclick="showMotivation()">
         I'm having trouble staying motivated
     </button>
 
-    <button onclick="showSupport('study')">
+    <button onclick="showStudyStrategies()">
         I need better study strategies
     </button>
 
     <div id="support">
+
         <h2>Study Support</h2>
+
         <p>
             Choose a challenge above to explore a practical
             learning strategy.
         </p>
+
     </div>
 
+
     <script>
-        function showSupport(type) {
 
-            let support = document.getElementById("support");
+        function showTimeManagement() {
 
-            if (type === "time") {
-                support.innerHTML = `
-                    <h2>Time Management Support</h2>
-                    <p>Try breaking your study time into small, manageable tasks.</p>
-                    <ul>
-                        <li>Choose 2–3 important tasks for today.</li>
-                        <li>Set a realistic study time for each task.</li>
-                        <li>Take short breaks between study sessions.</li>
-                    </ul>
-                `;
-            }
+            document.getElementById("support").innerHTML = `
+                <h2>Time Management Support</h2>
 
-            else if (type === "motivation") {
-                support.innerHTML = `
-                    <h2>Motivation Support</h2>
-                    <p>Start with a small task instead of waiting to feel motivated.</p>
-                    <ul>
-                        <li>Set one small goal.</li>
-                        <li>Study for a short period first.</li>
-                        <li>Record your progress after completing the task.</li>
-                    </ul>
-                `;
-            }
+                <p>
+                    Try breaking your study time into small,
+                    manageable tasks.
+                </p>
 
-            else if (type === "study") {
-                support.innerHTML = `
-                    <h2>Study Strategy Support</h2>
-                    <p>Try active learning instead of only reading your notes.</p>
-                    <ul>
-                        <li>Make your own questions.</li>
-                        <li>Explain the topic in your own words.</li>
-                        <li>Use practice questions to check your understanding.</li>
-                    </ul>
-                `;
-            }
+                <ul>
+                    <li>Choose 2–3 important tasks for today.</li>
+                    <li>Set a realistic study time for each task.</li>
+                    <li>Take short breaks between study sessions.</li>
+                </ul>
+            `;
         }
+
+
+        function showMotivation() {
+
+            document.getElementById("support").innerHTML = `
+                <h2>Motivation Support</h2>
+
+                <p>
+                    Start with a small task instead of waiting
+                    to feel motivated.
+                </p>
+
+                <ul>
+                    <li>Set one small goal.</li>
+                    <li>Study for a short period first.</li>
+                    <li>Record your progress after completing the task.</li>
+                </ul>
+            `;
+        }
+
+
+        function showStudyStrategies() {
+
+            document.getElementById("support").innerHTML = `
+                <h2>Study Strategy Support</h2>
+
+                <p>
+                    Try active learning instead of only reading
+                    your notes.
+                </p>
+
+                <ul>
+                    <li>Make your own questions.</li>
+                    <li>Explain the topic in your own words.</li>
+                    <li>Use practice questions to check your understanding.</li>
+                </ul>
+            `;
+        }
+
     </script>
 
 </body>
 
-  </html>
+</html>
