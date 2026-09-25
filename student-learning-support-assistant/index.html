@@ -1,29 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Learning Support Assistant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Learning Support Assistant</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 12px 0;
+            padding: 14px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #support {
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
-  <h1>Student Learning Support Assistant</h1>
 
-  <p>
-    This tool helps students reflect on their learning needs
-    and explore practical study-support strategies.
-  </p>
+    <h1>Student Learning Support Assistant</h1>
 
-  <h2>How are you feeling about your studies?</h2>
+    <p class="intro">
+        This tool helps students reflect on their learning needs
+        and explore practical study-support strategies.
+    </p>
 
-  <button>I'm struggling with time management</button>
-  <button>I'm having trouble staying motivated</button>
-  <button>I need better study strategies</button>
+    <h2>How are you feeling about your studies?</h2>
 
-  <h2>Study Support</h2>
+    <button onclick="showSupport('time')">
+        I'm struggling with time management
+    </button>
 
-  <p>
-    Choose a challenge above to explore a practical learning strategy.
-  </p>
+    <button onclick="showSupport('motivation')">
+        I'm having trouble staying motivated
+    </button>
+
+    <button onclick="showSupport('study')">
+        I need better study strategies
+    </button>
+
+    <div id="support">
+        <h2>Study Support</h2>
+        <p>
+            Choose a challenge above to explore a practical
+            learning strategy.
+        </p>
+    </div>
+
+    <script>
+        function showSupport(type) {
+
+            let support = document.getElementById("support");
+
+            if (type === "time") {
+                support.innerHTML = `
+                    <h2>Time Management Support</h2>
+                    <p>Try breaking your study time into small, manageable tasks.</p>
+                    <ul>
+                        <li>Choose 2–3 important tasks for today.</li>
+                        <li>Set a realistic study time for each task.</li>
+                        <li>Take short breaks between study sessions.</li>
+                    </ul>
+                `;
+            }
+
+            else if (type === "motivation") {
+                support.innerHTML = `
+                    <h2>Motivation Support</h2>
+                    <p>Start with a small task instead of waiting to feel motivated.</p>
+                    <ul>
+                        <li>Set one small goal.</li>
+                        <li>Study for a short period first.</li>
+                        <li>Record your progress after completing the task.</li>
+                    </ul>
+                `;
+            }
+
+            else if (type === "study") {
+                support.innerHTML = `
+                    <h2>Study Strategy Support</h2>
+                    <p>Try active learning instead of only reading your notes.</p>
+                    <ul>
+                        <li>Make your own questions.</li>
+                        <li>Explain the topic in your own words.</li>
+                        <li>Use practice questions to check your understanding.</li>
+                    </ul>
+                `;
+            }
+        }
+    </script>
+
 </body>
+
   </html>
